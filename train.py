@@ -16,7 +16,7 @@ import argparse
 
 from absl import app
 from absl import flags
-import google.generativeai as palm
+import google.generativeai as genai
 import numpy as np
 import openai
 from optimization import opt_utils
@@ -140,7 +140,6 @@ def setup_cfg(args):
 
     return cfg
 
-
 def main(args):
     cfg = setup_cfg(args)
     if cfg.SEED >= 0:
@@ -166,7 +165,7 @@ def main(args):
         assert (
             palm_api_key
         ), "A PaLM API key is needed when prompting the text-bison model."
-        palm.configure(api_key=palm_api_key)
+        genai.configure(api_key=palm_api_key)
 
     OPRO_ROOT_PATH = "/home/IPO"
 
@@ -231,7 +230,7 @@ def main(args):
         call_optimizer_server_func = call_optimizer_finetuned_palm_server_func
 
     else:
-        assert optimizer_llm_name in {"gpt-3.5-turbo", "gpt-4"}
+        assert optimizer_llm_name in {"gpt-3.5-turbo", "gpt-4", "palm"}
         optimizer_gpt_max_decode_steps = 40  # 512
         optimizer_gpt_temperature = 1.0  # 1.0
 
@@ -260,7 +259,7 @@ def main(args):
     ]
 
     num_generated_instructions_in_each_step = 8  # 8  #
-    num_search_steps = 100  #
+    num_search_steps = 3  #
     max_num_instructions = 30  # 20 the maximum number of instructions and scores in the meta-prompt
 
     few_shot_qa_pairs = False  # coop: no qa pairs
@@ -316,62 +315,26 @@ def main(args):
         #
 
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--root", type=str, default="/home/data", help="path to dataset")
-    parser.add_argument("--output-dir", type=str, default="output/base2new/train_base/oxford_flowers/shots_1/IPO/vit_b16_ctxv1/seed1",
-                        help="output directory")
-    parser.add_argument(
-        "--resume",
-        type=str,
-        default="",
-        help="checkpoint directory (from which the training resumes)",
-    )
-    parser.add_argument(
-        "--seed", type=int, default=1, help="only positive value enables a fixed seed"
-    )
-    parser.add_argument(
-        "--source-domains", type=str, nargs="+", help="source domains for DA/DG"
-    )
-    parser.add_argument(
-        "--target-domains", type=str, nargs="+", help="target domains for DA/DG"
-    )
-    parser.add_argument(
-        "--transforms", type=str, nargs="+", help="data augmentation methods"
-    )
-    parser.add_argument(
-        "--config-file", type=str, default="configs/trainers/IPO/vit_b16_ctxv1.yaml", help="path to config file"
-    )
-    parser.add_argument(
-        "--dataset-config-file",
-        type=str,
-        default="configs/datasets/oxford_flowers.yaml",
-        help="path to config file for dataset setup",
-    )
-    parser.add_argument("--trainer", type=str, default="CoOp", help="name of trainer")
-    parser.add_argument("--backbone", type=str, default="", help="name of CNN backbone")
-    parser.add_argument("--head", type=str, default="", help="name of head")
-    parser.add_argument("--eval-only", action="store_true", help="evaluation only")
-    parser.add_argument(
-        "--model-dir",
-        type=str,
-        default="",
-        help="load model from this directory for eval-only mode",
-    )
-    parser.add_argument(
-        "--load-epoch", type=int, help="load model weights at this epoch for evaluation"
-    )
-    parser.add_argument(
-        "--no-train", action="store_true", help="do not call trainer.train()"
-    )
-    parser.add_argument(
-        "opts",
-        default=None,
-        nargs=argparse.REMAINDER,
-        help="modify config options using the command-line",
-    )
-
-    parser.add_argument("--test", type=str, default=False, help="train or test")  #
-
+    parser.add_argument("--root", type=str, default="/home/data")
+    parser.add_argument("--output-dir", type=str, default="output/base2new/train_base/oxford_flowers/shots_1/IPO/vit_b16_ctxv1/seed1")
+    parser.add_argument("--resume", type=str, default="")
+    parser.add_argument("--seed", type=int, default=1)
+    parser.add_argument("--source-domains", type=str, nargs="+")
+    parser.add_argument("--target-domains", type=str, nargs="+")
+    parser.add_argument("--transforms", type=str, nargs="+")
+    parser.add_argument("--config-file", type=str, default="configs/trainers/IPO/vit_b16_ctxv1.yaml")
+    parser.add_argument("--dataset-config-file", type=str, default="configs/datasets/oxford_flowers.yaml")
+    parser.add_argument("--trainer", type=str, default="CoOp")
+    parser.add_argument("--backbone", type=str, default="")
+    parser.add_argument("--head", type=str, default="")
+    parser.add_argument("--eval-only", action="store_true")
+    parser.add_argument("--model-dir", type=str, default="")
+    parser.add_argument("--load-epoch", type=int)
+    parser.add_argument("--no-train", action="store_true")
+    parser.add_argument("opts", default=None, nargs=argparse.REMAINDER)
+    parser.add_argument("--test", type=str, default=False)
     args = parser.parse_args()
     main(args)

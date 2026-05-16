@@ -43,7 +43,7 @@ class Logger:
     def write(self, msg):
         self.console.write(msg)
         if self.file is not None:
-            self.file.write(msg)
+            self.file.write(msg.encode('utf-8', errors='replace').decode('utf-8'))
 
     def flush(self):
         self.console.flush()

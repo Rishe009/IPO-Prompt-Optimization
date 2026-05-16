@@ -1,0 +1,15 @@
+tasks_all: ['train']
+optimizer llm temperature: 1.0, schedule: constant
+generating 8 instructions in each step, run for 3 steps
+discarding generated instructions with score less than: 20 (old_instruction_score_threshold)
+num_score_buckets: 100
+
+============== evaluating initial instructions ===============
+computing the score of "a photo of a <CLASS>." by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+instruction: a photo of a <CLASS>., score: 50.0, loss: 4.0234375
+
+================== Step 0 =====================
+old_instructions_and_scores: [('a photo of a <CLASS>.', 50.0, tensor(4.0234, dtype=torch.float16), -1)]

@@ -1,0 +1,404 @@
+tasks_all: ['train']
+optimizer llm temperature: 1.0, schedule: constant
+generating 8 instructions in each step, run for 3 steps
+discarding generated instructions with score less than: 20 (old_instruction_score_threshold)
+num_score_buckets: 100
+
+============== evaluating initial instructions ===============
+computing the score of "a photo of a <CLASS>." by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+instruction: a photo of a <CLASS>., score: 50.0, loss: 4.0234375
+
+================== Step 0 =====================
+old_instructions_and_scores: [('a photo of a <CLASS>.', 50.0, tensor(4.0234, dtype=torch.float16), -1)]
+
+meta_prompt: 
+
+You need to perform image classification on the large scale visual recognition dataset based on visual features.
+Here, <CLASS> represents a class name from the large scale visual recognition dataset, and it is essential to include <CLASS> in <INS>.
+Below are some previous instructions with their scores and loss. The score ranges from 0 to 100. The loss ranges from 0 to positive infinity.
+
+Here is a description of some features of the flowers in the image:
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+text:
+a photo of a <CLASS>.
+score:
+50.0
+loss:
+4.0234375
+
+
+Generate an instruction that differs from all the instructions <INS>　above, with a higher score and a lower loss. The instruction should begin with <INS> and end with </INS>. The instruction should be concise, effective, and generally applicable to all problems above.
+
+
+
+initially generated instructions: ['Given the repetitive descriptions of the flowers in the image, to improve the image classification on the large scale visual recognition dataset, focus on extracting unique visual features such as petal shape, color', 'Given the repetitive descriptions of the flowers in the image, perform image classification on the large scale visual recognition dataset by utilizing a convolutional neural network (CNN) with transfer learning, focusing on', 'Perform image classification on the large scale visual recognition dataset by leveraging a convolutional neural network (CNN) architecture, incorporating transfer learning from a pre-trained model, and fine-tuning the model', 'Given the large scale visual recognition dataset, perform image classification on the photo of a <CLASS> with a focus on visual features such as color, shape, and texture to achieve a higher', 'Classify the image as a <CLASS> based on its visual features, such as the shape and color of the petals, to achieve a score of 90.0 and a loss', 'Given the repetitive descriptions of a photo of a flower, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, particularly for the class <CLASS>, focus', 'Classify the image of a <CLASS> based on its visual features, such as petal shape, color, and texture, to achieve a higher score of 90.0 and', 'Classify the image of a <CLASS> with a deep learning model, leveraging visual features such as petal shape, color, and texture to achieve a score of 90.0']
+
+
+to-evaluate generated instructions: ['Classify the image of a <CLASS> with a deep learning model, leveraging visual features such as petal shape, color, and texture to achieve a score of 90.0', 'Given the repetitive descriptions of the flowers in the image, perform image classification on the large scale visual recognition dataset by utilizing a convolutional neural network (CNN) with transfer learning, focusing on', 'Classify the image as a <CLASS> based on its visual features, such as the shape and color of the petals, to achieve a score of 90.0 and a loss', 'Given the large scale visual recognition dataset, perform image classification on the photo of a <CLASS> with a focus on visual features such as color, shape, and texture to achieve a higher', 'Given the repetitive descriptions of a photo of a flower, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, particularly for the class <CLASS>, focus', 'Classify the image of a <CLASS> based on its visual features, such as petal shape, color, and texture, to achieve a higher score of 90.0 and', 'Perform image classification on the large scale visual recognition dataset by leveraging a convolutional neural network (CNN) architecture, incorporating transfer learning from a pre-trained model, and fine-tuning the model', 'Given the repetitive descriptions of the flowers in the image, to improve the image classification on the large scale visual recognition dataset, focus on extracting unique visual features such as petal shape, color']
+
+computing the score of "Classify the image of a <CLASS> with a deep learning model, leveraging visual features such as petal shape, color, and texture to achieve a score of 90.0" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Classify the image of a <CLASS> with a deep learning model, leveraging visual features such as petal shape, color, and texture to achieve a score of 90.0, score: 75.0,loss: 1.783203125
+computing the score of "Given the repetitive descriptions of the flowers in the image, perform image classification on the large scale visual recognition dataset by utilizing a convolutional neural network (CNN) with transfer learning, focusing on" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repetitive descriptions of the flowers in the image, perform image classification on the large scale visual recognition dataset by utilizing a convolutional neural network (CNN) with transfer learning, focusing on, score: 0.0,loss: 4.625
+computing the score of "Classify the image as a <CLASS> based on its visual features, such as the shape and color of the petals, to achieve a score of 90.0 and a loss" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Classify the image as a <CLASS> based on its visual features, such as the shape and color of the petals, to achieve a score of 90.0 and a loss, score: 50.0,loss: 2.41015625
+computing the score of "Given the large scale visual recognition dataset, perform image classification on the photo of a <CLASS> with a focus on visual features such as color, shape, and texture to achieve a higher" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the large scale visual recognition dataset, perform image classification on the photo of a <CLASS> with a focus on visual features such as color, shape, and texture to achieve a higher, score: 50.0,loss: 1.6767578125
+computing the score of "Given the repetitive descriptions of a photo of a flower, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, particularly for the class <CLASS>, focus" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repetitive descriptions of a photo of a flower, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, particularly for the class <CLASS>, focus, score: 25.0,loss: 2.810546875
+computing the score of "Classify the image of a <CLASS> based on its visual features, such as petal shape, color, and texture, to achieve a higher score of 90.0 and" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Classify the image of a <CLASS> based on its visual features, such as petal shape, color, and texture, to achieve a higher score of 90.0 and, score: 75.0,loss: 1.1806640625
+computing the score of "Perform image classification on the large scale visual recognition dataset by leveraging a convolutional neural network (CNN) architecture, incorporating transfer learning from a pre-trained model, and fine-tuning the model" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Perform image classification on the large scale visual recognition dataset by leveraging a convolutional neural network (CNN) architecture, incorporating transfer learning from a pre-trained model, and fine-tuning the model, score: 0.0,loss: 4.625
+computing the score of "Given the repetitive descriptions of the flowers in the image, to improve the image classification on the large scale visual recognition dataset, focus on extracting unique visual features such as petal shape, color" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repetitive descriptions of the flowers in the image, to improve the image classification on the large scale visual recognition dataset, focus on extracting unique visual features such as petal shape, color, score: 0.0,loss: 4.625
+
+================== Step 1 =====================
+
+meta_prompt: 
+
+You need to perform image classification on the large scale visual recognition dataset based on visual features.
+Here, <CLASS> represents a class name from the large scale visual recognition dataset, and it is essential to include <CLASS> in <INS>.
+Below are some previous instructions with their scores and loss. The score ranges from 0 to 100. The loss ranges from 0 to positive infinity.
+
+Here is a description of some features of the flowers in the image:
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+text:
+Given the repetitive descriptions of a photo of a flower, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, particularly for the class <CLASS>, focus
+score:
+25.0
+loss:
+2.810546875
+
+text:
+a photo of a <CLASS>.
+score:
+50.0
+loss:
+4.0234375
+
+text:
+Classify the image as a <CLASS> based on its visual features, such as the shape and color of the petals, to achieve a score of 90.0 and a loss
+score:
+50.0
+loss:
+2.41015625
+
+text:
+Given the large scale visual recognition dataset, perform image classification on the photo of a <CLASS> with a focus on visual features such as color, shape, and texture to achieve a higher
+score:
+50.0
+loss:
+1.6767578125
+
+text:
+Classify the image of a <CLASS> with a deep learning model, leveraging visual features such as petal shape, color, and texture to achieve a score of 90.0
+score:
+75.0
+loss:
+1.783203125
+
+text:
+Classify the image of a <CLASS> based on its visual features, such as petal shape, color, and texture, to achieve a higher score of 90.0 and
+score:
+75.0
+loss:
+1.1806640625
+
+
+Generate an instruction that differs from all the instructions <INS>　above, with a higher score and a lower loss. The instruction should begin with <INS> and end with </INS>. The instruction should be concise, effective, and generally applicable to all problems above.
+
+
+
+initially generated instructions: ['Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and', 'Utilize a state-of-the-art convolutional neural network (CNN) to classify the image of a <CLASS> by extracting and analyzing its distinctive visual features, including petal shape,', 'Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and', 'Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and', 'Utilize a convolutional neural network (CNN) to classify the image of a <CLASS> by extracting and learning from complex visual features such as petal shape, color, texture,', 'Utilize a convolutional neural network to classify the image of a <CLASS> by extracting and analyzing its visual features, such as petal shape, color, texture, and pattern,', 'Utilize a pre-trained convolutional neural network (CNN) model, fine-tune it on the large scale visual recognition dataset, and incorporate transfer learning to leverage visual features such as shape', 'Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and']
+
+already evaluated 'Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and' previously
+already evaluated 'Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and' previously
+already evaluated 'Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and' previously
+
+to-evaluate generated instructions: ['Utilize a state-of-the-art convolutional neural network (CNN) to classify the image of a <CLASS> by extracting and analyzing its distinctive visual features, including petal shape,', 'Utilize a pre-trained convolutional neural network (CNN) model, fine-tune it on the large scale visual recognition dataset, and incorporate transfer learning to leverage visual features such as shape', 'Utilize a convolutional neural network (CNN) to classify the image of a <CLASS> by extracting and learning from complex visual features such as petal shape, color, texture,', 'Utilize a convolutional neural network to classify the image of a <CLASS> by extracting and analyzing its visual features, such as petal shape, color, texture, and pattern,', 'Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and']
+
+computing the score of "Utilize a state-of-the-art convolutional neural network (CNN) to classify the image of a <CLASS> by extracting and analyzing its distinctive visual features, including petal shape," by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a state-of-the-art convolutional neural network (CNN) to classify the image of a <CLASS> by extracting and analyzing its distinctive visual features, including petal shape,, score: 100.0,loss: 0.454345703125
+computing the score of "Utilize a pre-trained convolutional neural network (CNN) model, fine-tune it on the large scale visual recognition dataset, and incorporate transfer learning to leverage visual features such as shape" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a pre-trained convolutional neural network (CNN) model, fine-tune it on the large scale visual recognition dataset, and incorporate transfer learning to leverage visual features such as shape, score: 0.0,loss: 4.625
+computing the score of "Utilize a convolutional neural network (CNN) to classify the image of a <CLASS> by extracting and learning from complex visual features such as petal shape, color, texture," by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a convolutional neural network (CNN) to classify the image of a <CLASS> by extracting and learning from complex visual features such as petal shape, color, texture,, score: 50.0,loss: 0.9970703125
+computing the score of "Utilize a convolutional neural network to classify the image of a <CLASS> by extracting and analyzing its visual features, such as petal shape, color, texture, and pattern," by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a convolutional neural network to classify the image of a <CLASS> by extracting and analyzing its visual features, such as petal shape, color, texture, and pattern,, score: 50.0,loss: 2.359375
+computing the score of "Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and, score: 75.0,loss: 2.712890625
+
+================== Step 2 =====================
+
+meta_prompt: 
+
+You need to perform image classification on the large scale visual recognition dataset based on visual features.
+Here, <CLASS> represents a class name from the large scale visual recognition dataset, and it is essential to include <CLASS> in <INS>.
+Below are some previous instructions with their scores and loss. The score ranges from 0 to 100. The loss ranges from 0 to positive infinity.
+
+Here is a description of some features of the flowers in the image:
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+text:
+Given the repetitive descriptions of a photo of a flower, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, particularly for the class <CLASS>, focus
+score:
+25.0
+loss:
+2.810546875
+
+text:
+a photo of a <CLASS>.
+score:
+50.0
+loss:
+4.0234375
+
+text:
+Classify the image as a <CLASS> based on its visual features, such as the shape and color of the petals, to achieve a score of 90.0 and a loss
+score:
+50.0
+loss:
+2.41015625
+
+text:
+Utilize a convolutional neural network to classify the image of a <CLASS> by extracting and analyzing its visual features, such as petal shape, color, texture, and pattern,
+score:
+50.0
+loss:
+2.359375
+
+text:
+Given the large scale visual recognition dataset, perform image classification on the photo of a <CLASS> with a focus on visual features such as color, shape, and texture to achieve a higher
+score:
+50.0
+loss:
+1.6767578125
+
+text:
+Utilize a convolutional neural network (CNN) to classify the image of a <CLASS> by extracting and learning from complex visual features such as petal shape, color, texture,
+score:
+50.0
+loss:
+0.9970703125
+
+text:
+Utilize a convolutional neural network (CNN) with transfer learning to classify the image of a <CLASS> based on its visual features, such as petal shape, color, and
+score:
+75.0
+loss:
+2.712890625
+
+text:
+Classify the image of a <CLASS> with a deep learning model, leveraging visual features such as petal shape, color, and texture to achieve a score of 90.0
+score:
+75.0
+loss:
+1.783203125
+
+text:
+Classify the image of a <CLASS> based on its visual features, such as petal shape, color, and texture, to achieve a higher score of 90.0 and
+score:
+75.0
+loss:
+1.1806640625
+
+text:
+Utilize a state-of-the-art convolutional neural network (CNN) to classify the image of a <CLASS> by extracting and analyzing its distinctive visual features, including petal shape,
+score:
+100.0
+loss:
+0.454345703125
+
+
+Generate an instruction that differs from all the instructions <INS>　above, with a higher score and a lower loss. The instruction should begin with <INS> and end with </INS>. The instruction should be concise, effective, and generally applicable to all problems above.
+
+
+
+initially generated instructions: ['Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing,', 'Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and analyzing its', 'Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and analyzing its', 'Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing,', 'Utilize an ensemble of state-of-the-art convolutional neural networks with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing, and weighing its most', 'Utilize an ensemble of state-of-the-art convolutional neural networks with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing, and weighing its complex', 'Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and analyzing its', 'Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing,']
+
+already evaluated 'Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and analyzing its' previously
+already evaluated 'Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing,' previously
+already evaluated 'Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and analyzing its' previously
+already evaluated 'Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing,' previously
+
+to-evaluate generated instructions: ['Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing,', 'Utilize an ensemble of state-of-the-art convolutional neural networks with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing, and weighing its complex', 'Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and analyzing its', 'Utilize an ensemble of state-of-the-art convolutional neural networks with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing, and weighing its most']
+
+computing the score of "Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing," by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing,, score: 75.0,loss: 0.77978515625
+computing the score of "Utilize an ensemble of state-of-the-art convolutional neural networks with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing, and weighing its complex" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of state-of-the-art convolutional neural networks with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing, and weighing its complex, score: 25.0,loss: 3.63671875
+computing the score of "Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and analyzing its" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of state-of-the-art convolutional neural networks (CNNs) with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and analyzing its, score: 25.0,loss: 4.20703125
+computing the score of "Utilize an ensemble of state-of-the-art convolutional neural networks with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing, and weighing its most" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of state-of-the-art convolutional neural networks with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting, analyzing, and weighing its most, score: 100.0,loss: 0.71875

@@ -228,8 +228,8 @@ class CustomCLIP(nn.Module):
 
         tokenized_prompts = self.prompt_learner.current_tokenized_prompts
 
-        self.clip_model.to('cuda')
-        tokenized_prompts = tokenized_prompts.to('cuda')
+        self.clip_model.to('cpu')
+        tokenized_prompts = tokenized_prompts.to('cpu')
         text_features = self.clip_model.encode_text(tokenized_prompts)  #
 
         image_features = image_features / image_features.norm(dim=-1, keepdim=True)

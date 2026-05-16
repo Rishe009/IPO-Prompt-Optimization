@@ -28,7 +28,7 @@ OPRO_ROOT_PATH = os.path.dirname(
 sys.path.insert(0, OPRO_ROOT_PATH)
 
 import numpy as np
-import metrics
+from dassl import metrics
 import pandas as pd
 
 # the Boolean symbols appeared in BBH tasks

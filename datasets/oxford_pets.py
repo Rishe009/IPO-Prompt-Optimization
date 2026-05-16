@@ -106,7 +106,7 @@ class OxfordPets(DatasetBase):
                 label = item.label
                 classname = item.classname
                 impath = impath.replace(path_prefix, "")
-                if impath.startswith("/"):
+                if impath.startswith("/") or impath.startswith("\\"):
                     impath = impath[1:]
                 out.append((impath, label, classname))
             return out

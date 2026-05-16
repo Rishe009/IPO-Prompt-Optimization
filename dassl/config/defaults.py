@@ -15,7 +15,7 @@ _C.RESUME = ""
 # Set seed to negative value to randomize everything
 # Set seed to positive value to use a fixed seed
 _C.SEED = -1
-_C.USE_CUDA = True
+_C.USE_CUDA = False
 # Print detailed information
 # E.g. trainer, dataset, and backbone
 _C.VERBOSE = True

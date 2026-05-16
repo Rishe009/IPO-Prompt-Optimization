@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 from tqdm import tqdm
 from torch.utils.tensorboard import SummaryWriter
-import re_text
+import re
 from dassl.data import DataManager
 from dassl.optim import build_optimizer, build_lr_scheduler
 from dassl.utils import (
@@ -619,6 +619,7 @@ class TrainerX(SimpleTrainer):
         end = time.time()
 
         for self.batch_idx, batch in enumerate(self.train_loader_x):
+            if self.batch_idx >= 1: break
 
 
             data_time.update(time.time() - end)
@@ -668,6 +669,7 @@ class TrainerX(SimpleTrainer):
 
         end = time.time()
         for self.batch_idx, batch in enumerate(self.train_loader_x):
+            if self.batch_idx >= 1: break
 
             data_time.update(time.time() - end)
 

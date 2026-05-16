@@ -1,0 +1,88 @@
+tasks_all: ['train']
+optimizer llm temperature: 1.0, schedule: constant
+generating 8 instructions in each step, run for 3 steps
+discarding generated instructions with score less than: 20 (old_instruction_score_threshold)
+num_score_buckets: 100
+
+============== evaluating initial instructions ===============
+computing the score of "a photo of a <CLASS>." by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+instruction: a photo of a <CLASS>., score: 50.0, loss: 4.0234375
+
+================== Step 0 =====================
+old_instructions_and_scores: [('a photo of a <CLASS>.', 50.0, tensor(4.0234, dtype=torch.float16), -1)]
+
+meta_prompt: 
+
+You need to perform image classification on the large scale visual recognition dataset based on visual features.
+Here, <CLASS> represents a class name from the large scale visual recognition dataset, and it is essential to include <CLASS> in <INS>.
+Below are some previous instructions with their scores and loss. The score ranges from 0 to 100. The loss ranges from 0 to positive infinity.
+
+Here is a description of some features of the flowers in the image:
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+text:
+a photo of a <CLASS>.
+score:
+50.0
+loss:
+4.0234375
+
+
+Generate an instruction that differs from all the instructions <INS>　above, with a higher score and a lower loss. The instruction should begin with <INS> and end with </INS>. The instruction should be concise, effective, and generally applicable to all problems above.
+
+
+
+initially generated instructions: ['Classify the image of a <CLASS> based on its visual features, such as petal shape, color, and texture, to achieve a score of 90.0 and a', 'Perform image classification on the large scale visual recognition dataset by utilizing a pre-trained convolutional neural network (CNN) model, such as VGG16 or ResNet50, and fine-t', 'Classify the image of a flower as a specific <CLASS> with attention to its unique visual features, such as petal shape, color, and arrangement, to improve the score to', 'Given the repetitive descriptions of the flowers, to improve the score and reduce the loss for image classification on the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal', 'Classify the image of a <CLASS> based on its visual features, such as petal shape, color, and arrangement, to achieve a score of 90.0 and a', 'Given the repetitive descriptions of the flowers, to improve the image classification score and reduce the loss, focus on extracting distinctive visual features from the images, such as petal shape, color,', 'Classify the image of a <CLASS> based on its visual features, such as color, shape, and texture, to achieve a score of 90.0 and a loss of', 'Classify the image of a <CLASS> based on its visual features, such as shape, color, and texture, to achieve a score of at least 90 and a loss of']
+
+
+to-evaluate generated instructions: ['Given the repetitive descriptions of the flowers, to improve the image classification score and reduce the loss, focus on extracting distinctive visual features from the images, such as petal shape, color,', 'Classify the image of a <CLASS> based on its visual features, such as color, shape, and texture, to achieve a score of 90.0 and a loss of', 'Classify the image of a flower as a specific <CLASS> with attention to its unique visual features, such as petal shape, color, and arrangement, to improve the score to', 'Classify the image of a <CLASS> based on its visual features, such as petal shape, color, and arrangement, to achieve a score of 90.0 and a', 'Classify the image of a <CLASS> based on its visual features, such as shape, color, and texture, to achieve a score of at least 90 and a loss of', 'Given the repetitive descriptions of the flowers, to improve the score and reduce the loss for image classification on the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal', 'Perform image classification on the large scale visual recognition dataset by utilizing a pre-trained convolutional neural network (CNN) model, such as VGG16 or ResNet50, and fine-t', 'Classify the image of a <CLASS> based on its visual features, such as petal shape, color, and texture, to achieve a score of 90.0 and a']
+
+computing the score of "Given the repetitive descriptions of the flowers, to improve the image classification score and reduce the loss, focus on extracting distinctive visual features from the images, such as petal shape, color," by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repetitive descriptions of the flowers, to improve the image classification score and reduce the loss, focus on extracting distinctive visual features from the images, such as petal shape, color,, score: 0.0,loss: 4.625
+computing the score of "Classify the image of a <CLASS> based on its visual features, such as color, shape, and texture, to achieve a score of 90.0 and a loss of" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers

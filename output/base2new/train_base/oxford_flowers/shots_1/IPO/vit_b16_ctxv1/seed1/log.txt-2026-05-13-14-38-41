@@ -1,0 +1,444 @@
+tasks_all: ['train']
+optimizer llm temperature: 1.0, schedule: constant
+generating 8 instructions in each step, run for 3 steps
+discarding generated instructions with score less than: 20 (old_instruction_score_threshold)
+num_score_buckets: 100
+
+============== evaluating initial instructions ===============
+computing the score of "a photo of a <CLASS>." by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+instruction: a photo of a <CLASS>., score: 50.0, loss: 4.0234375
+
+================== Step 0 =====================
+old_instructions_and_scores: [('a photo of a <CLASS>.', 50.0, tensor(4.0234, dtype=torch.float16), -1)]
+
+meta_prompt: 
+
+You need to perform image classification on the large scale visual recognition dataset based on visual features.
+Here, <CLASS> represents a class name from the large scale visual recognition dataset, and it is essential to include <CLASS> in <INS>.
+Below are some previous instructions with their scores and loss. The score ranges from 0 to 100. The loss ranges from 0 to positive infinity.
+
+Here is a description of some features of the flowers in the image:
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+text:
+a photo of a <CLASS>.
+score:
+50.0
+loss:
+4.0234375
+
+
+Generate an instruction that differs from all the instructions <INS>　above, with a higher score and a lower loss. The instruction should begin with <INS> and end with </INS>. The instruction should be concise, effective, and generally applicable to all problems above.
+
+
+
+initially generated instructions: ['Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, utilizing advanced', 'Classify the image as a <CLASS> with a focus on petal shape, color, and texture to achieve a score of 90.0 and a loss of 0.', 'Classify the image of a flower as a <CLASS> with a focus on petal shape, color, and arrangement to achieve a higher accuracy, targeting a score of 90.', 'Classify the image of a flower as a <CLASS> with attention to its unique visual features, such as color, shape, and texture, to achieve a higher score of 90', 'Perform image classification on the large scale visual recognition dataset, focusing on the visual features of a photo of a <CLASS>, such as colors, shapes, and textures, to achieve a score', "Given the repeated descriptions of a flower, to improve image classification on the large scale visual recognition dataset, focus on enhancing the model's ability to distinguish between subtle visual features of different flower classes", 'Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, focusing on', 'Given the repeated descriptions of a flower, identify the specific class of the flower, such as a rose or a daisy, based on its visual features like color, shape, and texture']
+
+
+to-evaluate generated instructions: ['Perform image classification on the large scale visual recognition dataset, focusing on the visual features of a photo of a <CLASS>, such as colors, shapes, and textures, to achieve a score', 'Classify the image of a flower as a <CLASS> with a focus on petal shape, color, and arrangement to achieve a higher accuracy, targeting a score of 90.', "Given the repeated descriptions of a flower, to improve image classification on the large scale visual recognition dataset, focus on enhancing the model's ability to distinguish between subtle visual features of different flower classes", 'Classify the image as a <CLASS> with a focus on petal shape, color, and texture to achieve a score of 90.0 and a loss of 0.', 'Given the repeated descriptions of a flower, identify the specific class of the flower, such as a rose or a daisy, based on its visual features like color, shape, and texture', 'Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, utilizing advanced', 'Classify the image of a flower as a <CLASS> with attention to its unique visual features, such as color, shape, and texture, to achieve a higher score of 90', 'Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, focusing on']
+
+computing the score of "Perform image classification on the large scale visual recognition dataset, focusing on the visual features of a photo of a <CLASS>, such as colors, shapes, and textures, to achieve a score" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Perform image classification on the large scale visual recognition dataset, focusing on the visual features of a photo of a <CLASS>, such as colors, shapes, and textures, to achieve a score, score: 75.0,loss: 2.611328125
+computing the score of "Classify the image of a flower as a <CLASS> with a focus on petal shape, color, and arrangement to achieve a higher accuracy, targeting a score of 90." by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Classify the image of a flower as a <CLASS> with a focus on petal shape, color, and arrangement to achieve a higher accuracy, targeting a score of 90., score: 100.0,loss: 0.583984375
+computing the score of "Given the repeated descriptions of a flower, to improve image classification on the large scale visual recognition dataset, focus on enhancing the model's ability to distinguish between subtle visual features of different flower classes" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repeated descriptions of a flower, to improve image classification on the large scale visual recognition dataset, focus on enhancing the model's ability to distinguish between subtle visual features of different flower classes, score: 0.0,loss: 4.625
+computing the score of "Classify the image as a <CLASS> with a focus on petal shape, color, and texture to achieve a score of 90.0 and a loss of 0." by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Classify the image as a <CLASS> with a focus on petal shape, color, and texture to achieve a score of 90.0 and a loss of 0., score: 50.0,loss: 1.751953125
+computing the score of "Given the repeated descriptions of a flower, identify the specific class of the flower, such as a rose or a daisy, based on its visual features like color, shape, and texture" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repeated descriptions of a flower, identify the specific class of the flower, such as a rose or a daisy, based on its visual features like color, shape, and texture, score: 0.0,loss: 4.625
+computing the score of "Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, utilizing advanced" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, utilizing advanced, score: 50.0,loss: 1.0625
+computing the score of "Classify the image of a flower as a <CLASS> with attention to its unique visual features, such as color, shape, and texture, to achieve a higher score of 90" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Classify the image of a flower as a <CLASS> with attention to its unique visual features, such as color, shape, and texture, to achieve a higher score of 90, score: 50.0,loss: 1.91796875
+computing the score of "Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, focusing on" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, focusing on, score: 25.0,loss: 3.234375
+
+================== Step 1 =====================
+
+meta_prompt: 
+
+You need to perform image classification on the large scale visual recognition dataset based on visual features.
+Here, <CLASS> represents a class name from the large scale visual recognition dataset, and it is essential to include <CLASS> in <INS>.
+Below are some previous instructions with their scores and loss. The score ranges from 0 to 100. The loss ranges from 0 to positive infinity.
+
+Here is a description of some features of the flowers in the image:
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+text:
+Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, focusing on
+score:
+25.0
+loss:
+3.234375
+
+text:
+a photo of a <CLASS>.
+score:
+50.0
+loss:
+4.0234375
+
+text:
+Classify the image of a flower as a <CLASS> with attention to its unique visual features, such as color, shape, and texture, to achieve a higher score of 90
+score:
+50.0
+loss:
+1.91796875
+
+text:
+Classify the image as a <CLASS> with a focus on petal shape, color, and texture to achieve a score of 90.0 and a loss of 0.
+score:
+50.0
+loss:
+1.751953125
+
+text:
+Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, utilizing advanced
+score:
+50.0
+loss:
+1.0625
+
+text:
+Perform image classification on the large scale visual recognition dataset, focusing on the visual features of a photo of a <CLASS>, such as colors, shapes, and textures, to achieve a score
+score:
+75.0
+loss:
+2.611328125
+
+text:
+Classify the image of a flower as a <CLASS> with a focus on petal shape, color, and arrangement to achieve a higher accuracy, targeting a score of 90.
+score:
+100.0
+loss:
+0.583984375
+
+
+Generate an instruction that differs from all the instructions <INS>　above, with a higher score and a lower loss. The instruction should begin with <INS> and end with </INS>. The instruction should be concise, effective, and generally applicable to all problems above.
+
+
+
+initially generated instructions: ['Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its visual features, such as colors, shapes, and textures, and optimize the model', 'Utilize a convolutional neural network to classify the image of a <CLASS> with a focus on high-resolution features, precise object detection, and unique visual attributes, such as color,', 'Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its visual features, such as colors, shapes, and textures, to achieve a score', 'Utilize a deep learning model with transfer learning to classify the image of a <CLASS> by leveraging its visual features, such as colors, shapes, and textures, and optimize the model', 'Utilize a multimodal approach, combining high-resolution features, precise object detection, and advanced visual analysis, to classify the image of a <CLASS> with optimal accuracy, targeting a score', 'Utilize a deep learning model with transfer learning to classify the image of a <CLASS> by extracting high-level visual features, such as patterns, shapes, and colors, and optimizing the', 'Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its distinctive visual features, such as patterns, colors, and shapes, to achieve a', 'Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its distinctive visual features, such as patterns, colors, and shapes, to achieve a']
+
+already evaluated 'Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its distinctive visual features, such as patterns, colors, and shapes, to achieve a' previously
+
+to-evaluate generated instructions: ['Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its visual features, such as colors, shapes, and textures, and optimize the model', 'Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its visual features, such as colors, shapes, and textures, to achieve a score', 'Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its distinctive visual features, such as patterns, colors, and shapes, to achieve a', 'Utilize a multimodal approach, combining high-resolution features, precise object detection, and advanced visual analysis, to classify the image of a <CLASS> with optimal accuracy, targeting a score', 'Utilize a deep learning model with transfer learning to classify the image of a <CLASS> by leveraging its visual features, such as colors, shapes, and textures, and optimize the model', 'Utilize a convolutional neural network to classify the image of a <CLASS> with a focus on high-resolution features, precise object detection, and unique visual attributes, such as color,', 'Utilize a deep learning model with transfer learning to classify the image of a <CLASS> by extracting high-level visual features, such as patterns, shapes, and colors, and optimizing the']
+
+computing the score of "Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its visual features, such as colors, shapes, and textures, and optimize the model" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its visual features, such as colors, shapes, and textures, and optimize the model, score: 100.0,loss: 0.55224609375
+computing the score of "Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its visual features, such as colors, shapes, and textures, to achieve a score" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its visual features, such as colors, shapes, and textures, to achieve a score, score: 50.0,loss: 2.234375
+computing the score of "Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its distinctive visual features, such as patterns, colors, and shapes, to achieve a" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its distinctive visual features, such as patterns, colors, and shapes, to achieve a, score: 75.0,loss: 0.958984375
+computing the score of "Utilize a multimodal approach, combining high-resolution features, precise object detection, and advanced visual analysis, to classify the image of a <CLASS> with optimal accuracy, targeting a score" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a multimodal approach, combining high-resolution features, precise object detection, and advanced visual analysis, to classify the image of a <CLASS> with optimal accuracy, targeting a score, score: 0.0,loss: 3.68359375
+computing the score of "Utilize a deep learning model with transfer learning to classify the image of a <CLASS> by leveraging its visual features, such as colors, shapes, and textures, and optimize the model" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a deep learning model with transfer learning to classify the image of a <CLASS> by leveraging its visual features, such as colors, shapes, and textures, and optimize the model, score: 75.0,loss: 3.037109375
+computing the score of "Utilize a convolutional neural network to classify the image of a <CLASS> with a focus on high-resolution features, precise object detection, and unique visual attributes, such as color," by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a convolutional neural network to classify the image of a <CLASS> with a focus on high-resolution features, precise object detection, and unique visual attributes, such as color,, score: 75.0,loss: 0.6572265625
+computing the score of "Utilize a deep learning model with transfer learning to classify the image of a <CLASS> by extracting high-level visual features, such as patterns, shapes, and colors, and optimizing the" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a deep learning model with transfer learning to classify the image of a <CLASS> by extracting high-level visual features, such as patterns, shapes, and colors, and optimizing the, score: 25.0,loss: 3.724609375
+
+================== Step 2 =====================
+
+meta_prompt: 
+
+You need to perform image classification on the large scale visual recognition dataset based on visual features.
+Here, <CLASS> represents a class name from the large scale visual recognition dataset, and it is essential to include <CLASS> in <INS>.
+Below are some previous instructions with their scores and loss. The score ranges from 0 to 100. The loss ranges from 0 to positive infinity.
+
+Here is a description of some features of the flowers in the image:
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+text:
+Utilize a deep learning model with transfer learning to classify the image of a <CLASS> by extracting high-level visual features, such as patterns, shapes, and colors, and optimizing the
+score:
+25.0
+loss:
+3.724609375
+
+text:
+Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, focusing on
+score:
+25.0
+loss:
+3.234375
+
+text:
+a photo of a <CLASS>.
+score:
+50.0
+loss:
+4.0234375
+
+text:
+Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its visual features, such as colors, shapes, and textures, to achieve a score
+score:
+50.0
+loss:
+2.234375
+
+text:
+Classify the image of a flower as a <CLASS> with attention to its unique visual features, such as color, shape, and texture, to achieve a higher score of 90
+score:
+50.0
+loss:
+1.91796875
+
+text:
+Classify the image as a <CLASS> with a focus on petal shape, color, and texture to achieve a score of 90.0 and a loss of 0.
+score:
+50.0
+loss:
+1.751953125
+
+text:
+Classify the image of a <CLASS> with high-resolution features and precise object detection to achieve a score of 90.0 and a loss of 0.001, utilizing advanced
+score:
+50.0
+loss:
+1.0625
+
+text:
+Utilize a deep learning model with transfer learning to classify the image of a <CLASS> by leveraging its visual features, such as colors, shapes, and textures, and optimize the model
+score:
+75.0
+loss:
+3.037109375
+
+text:
+Perform image classification on the large scale visual recognition dataset, focusing on the visual features of a photo of a <CLASS>, such as colors, shapes, and textures, to achieve a score
+score:
+75.0
+loss:
+2.611328125
+
+text:
+Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its distinctive visual features, such as patterns, colors, and shapes, to achieve a
+score:
+75.0
+loss:
+0.958984375
+
+text:
+Utilize a convolutional neural network to classify the image of a <CLASS> with a focus on high-resolution features, precise object detection, and unique visual attributes, such as color,
+score:
+75.0
+loss:
+0.6572265625
+
+text:
+Classify the image of a flower as a <CLASS> with a focus on petal shape, color, and arrangement to achieve a higher accuracy, targeting a score of 90.
+score:
+100.0
+loss:
+0.583984375
+
+text:
+Utilize a deep learning model with transfer learning to classify the image of a <CLASS> based on its visual features, such as colors, shapes, and textures, and optimize the model
+score:
+100.0
+loss:
+0.55224609375
+
+
+Generate an instruction that differs from all the instructions <INS>　above, with a higher score and a lower loss. The instruction should begin with <INS> and end with </INS>. The instruction should be concise, effective, and generally applicable to all problems above.
+
+
+
+initially generated instructions: ['Utilize an ensemble of deep learning models with transfer learning to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes, colors,', 'Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and leveraging its unique visual features, such as patterns, shapes', 'Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes', 'Utilize an ensemble of deep learning models, including convolutional neural networks and transfer learning, to classify the image of a <CLASS> by extracting and leveraging high-level visual features, such', 'Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and integrating high-level visual features, such as patterns, shapes', 'Utilize an ensemble of deep learning models with transfer learning to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes, colors,', 'Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes', 'Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes']
+
+already evaluated 'Utilize an ensemble of deep learning models with transfer learning to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes, colors,' previously
+already evaluated 'Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes' previously
+already evaluated 'Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes' previously
+
+to-evaluate generated instructions: ['Utilize an ensemble of deep learning models with transfer learning to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes, colors,', 'Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and integrating high-level visual features, such as patterns, shapes', 'Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and leveraging its unique visual features, such as patterns, shapes', 'Utilize an ensemble of deep learning models, including convolutional neural networks and transfer learning, to classify the image of a <CLASS> by extracting and leveraging high-level visual features, such', 'Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes']
+
+computing the score of "Utilize an ensemble of deep learning models with transfer learning to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes, colors," by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of deep learning models with transfer learning to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes, colors,, score: 25.0,loss: 3.794921875
+computing the score of "Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and integrating high-level visual features, such as patterns, shapes" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and integrating high-level visual features, such as patterns, shapes, score: 100.0,loss: 0.83203125
+computing the score of "Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and leveraging its unique visual features, such as patterns, shapes" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and leveraging its unique visual features, such as patterns, shapes, score: 50.0,loss: 0.986328125
+computing the score of "Utilize an ensemble of deep learning models, including convolutional neural networks and transfer learning, to classify the image of a <CLASS> by extracting and leveraging high-level visual features, such" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of deep learning models, including convolutional neural networks and transfer learning, to classify the image of a <CLASS> by extracting and leveraging high-level visual features, such, score: 50.0,loss: 1.5703125
+computing the score of "Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of deep learning models with transfer learning and attention mechanisms to classify the image of a <CLASS> by extracting and combining high-level visual features, such as patterns, shapes, score: 50.0,loss: 2.583984375

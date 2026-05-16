@@ -1,0 +1,399 @@
+tasks_all: ['train']
+optimizer llm temperature: 1.0, schedule: constant
+generating 8 instructions in each step, run for 3 steps
+discarding generated instructions with score less than: 20 (old_instruction_score_threshold)
+num_score_buckets: 100
+
+============== evaluating initial instructions ===============
+computing the score of "a photo of a <CLASS>." by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+instruction: a photo of a <CLASS>., score: 50.0, loss: 4.0234375
+
+================== Step 0 =====================
+old_instructions_and_scores: [('a photo of a <CLASS>.', 50.0, tensor(4.0234, dtype=torch.float16), -1)]
+
+meta_prompt: 
+
+You need to perform image classification on the large scale visual recognition dataset based on visual features.
+Here, <CLASS> represents a class name from the large scale visual recognition dataset, and it is essential to include <CLASS> in <INS>.
+Below are some previous instructions with their scores and loss. The score ranges from 0 to 100. The loss ranges from 0 to positive infinity.
+
+Here is a description of some features of the flowers in the image:
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+text:
+a photo of a <CLASS>.
+score:
+50.0
+loss:
+4.0234375
+
+
+Generate an instruction that differs from all the instructions <INS>　above, with a higher score and a lower loss. The instruction should begin with <INS> and end with </INS>. The instruction should be concise, effective, and generally applicable to all problems above.
+
+
+
+initially generated instructions: ['Given the repetitive descriptions of flowers, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape,', 'Given the repetitive descriptions of the flower images, to improve the image classification on the large scale visual recognition dataset based on visual features, incorporate a diverse set of features such as color, texture', 'Given the repetitive descriptions of the flowers, to improve the image classification on the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape, color, and arrangement', 'Given the repetitive descriptions of a flower, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape', "Given the repeated descriptions of a flower, it's essential to focus on the distinctive visual features of the specific class, such as the shape, color, and texture of the petals, to", 'Classify the image of a <CLASS> based on its visual features, such as color, shape, and texture, to achieve a score of 90.0 and a loss of', 'Classify the image of a <CLASS> with a deep learning model that utilizes convolutional neural networks to extract visual features, achieving a score of 90.0 and a loss of', 'Given the repetitive descriptions of the flowers in the image, to perform image classification on the large scale visual recognition dataset based on visual features, focus on extracting distinctive features such as petal shape']
+
+
+to-evaluate generated instructions: ["Given the repeated descriptions of a flower, it's essential to focus on the distinctive visual features of the specific class, such as the shape, color, and texture of the petals, to", 'Given the repetitive descriptions of the flowers in the image, to perform image classification on the large scale visual recognition dataset based on visual features, focus on extracting distinctive features such as petal shape', 'Given the repetitive descriptions of the flower images, to improve the image classification on the large scale visual recognition dataset based on visual features, incorporate a diverse set of features such as color, texture', 'Classify the image of a <CLASS> with a deep learning model that utilizes convolutional neural networks to extract visual features, achieving a score of 90.0 and a loss of', 'Classify the image of a <CLASS> based on its visual features, such as color, shape, and texture, to achieve a score of 90.0 and a loss of', 'Given the repetitive descriptions of the flowers, to improve the image classification on the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape, color, and arrangement', 'Given the repetitive descriptions of a flower, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape', 'Given the repetitive descriptions of flowers, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape,']
+
+computing the score of "Given the repeated descriptions of a flower, it's essential to focus on the distinctive visual features of the specific class, such as the shape, color, and texture of the petals, to" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repeated descriptions of a flower, it's essential to focus on the distinctive visual features of the specific class, such as the shape, color, and texture of the petals, to, score: 0.0,loss: 4.625
+computing the score of "Given the repetitive descriptions of the flowers in the image, to perform image classification on the large scale visual recognition dataset based on visual features, focus on extracting distinctive features such as petal shape" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repetitive descriptions of the flowers in the image, to perform image classification on the large scale visual recognition dataset based on visual features, focus on extracting distinctive features such as petal shape, score: 0.0,loss: 4.625
+computing the score of "Given the repetitive descriptions of the flower images, to improve the image classification on the large scale visual recognition dataset based on visual features, incorporate a diverse set of features such as color, texture" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repetitive descriptions of the flower images, to improve the image classification on the large scale visual recognition dataset based on visual features, incorporate a diverse set of features such as color, texture, score: 0.0,loss: 4.625
+computing the score of "Classify the image of a <CLASS> with a deep learning model that utilizes convolutional neural networks to extract visual features, achieving a score of 90.0 and a loss of" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Classify the image of a <CLASS> with a deep learning model that utilizes convolutional neural networks to extract visual features, achieving a score of 90.0 and a loss of, score: 50.0,loss: 1.697265625
+computing the score of "Classify the image of a <CLASS> based on its visual features, such as color, shape, and texture, to achieve a score of 90.0 and a loss of" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Classify the image of a <CLASS> based on its visual features, such as color, shape, and texture, to achieve a score of 90.0 and a loss of, score: 25.0,loss: 2.94140625
+computing the score of "Given the repetitive descriptions of the flowers, to improve the image classification on the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape, color, and arrangement" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repetitive descriptions of the flowers, to improve the image classification on the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape, color, and arrangement, score: 0.0,loss: 4.625
+computing the score of "Given the repetitive descriptions of a flower, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repetitive descriptions of a flower, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape, score: 0.0,loss: 4.625
+computing the score of "Given the repetitive descriptions of flowers, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape," by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 0, instruction: Given the repetitive descriptions of flowers, to improve the image classification score and reduce the loss for the large scale visual recognition dataset, focus on extracting distinctive visual features such as petal shape,, score: 0.0,loss: 4.625
+
+================== Step 1 =====================
+
+meta_prompt: 
+
+You need to perform image classification on the large scale visual recognition dataset based on visual features.
+Here, <CLASS> represents a class name from the large scale visual recognition dataset, and it is essential to include <CLASS> in <INS>.
+Below are some previous instructions with their scores and loss. The score ranges from 0 to 100. The loss ranges from 0 to positive infinity.
+
+Here is a description of some features of the flowers in the image:
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+text:
+Classify the image of a <CLASS> based on its visual features, such as color, shape, and texture, to achieve a score of 90.0 and a loss of
+score:
+25.0
+loss:
+2.94140625
+
+text:
+a photo of a <CLASS>.
+score:
+50.0
+loss:
+4.0234375
+
+text:
+Classify the image of a <CLASS> with a deep learning model that utilizes convolutional neural networks to extract visual features, achieving a score of 90.0 and a loss of
+score:
+50.0
+loss:
+1.697265625
+
+
+Generate an instruction that differs from all the instructions <INS>　above, with a higher score and a lower loss. The instruction should begin with <INS> and end with </INS>. The instruction should be concise, effective, and generally applicable to all problems above.
+
+
+
+initially generated instructions: ['Utilize a transfer learning approach with a pre-trained convolutional neural network, fine-tuned on the large scale visual recognition dataset, to classify the image of a <CLASS> based on', 'Utilize a pre-trained ResNet50 model fine-tuned with transfer learning to classify the image of a <CLASS> based on its visual features, achieving a score of 95.', 'Utilize a state-of-the-art deep learning model that integrates transfer learning and attention mechanisms to classify the image of a <CLASS> based on its visual features, such as color, shape', 'Utilize a pre-trained ResNet50 model with transfer learning and fine-tune it on the large scale visual recognition dataset to classify images of a <CLASS> based on visual features,', 'Utilize a pre-trained ResNet50 model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape,', 'Utilize a pre-trained ResNet50 model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape,', 'Utilize a pre-trained deep learning model, fine-tuned on the large scale visual recognition dataset, to classify the image of a <CLASS> based on its visual features, leveraging techniques', 'Utilize a pre-trained deep learning model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape, and']
+
+already evaluated 'Utilize a pre-trained ResNet50 model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape,' previously
+
+to-evaluate generated instructions: ['Utilize a pre-trained deep learning model, fine-tuned on the large scale visual recognition dataset, to classify the image of a <CLASS> based on its visual features, leveraging techniques', 'Utilize a pre-trained ResNet50 model with transfer learning and fine-tune it on the large scale visual recognition dataset to classify images of a <CLASS> based on visual features,', 'Utilize a pre-trained ResNet50 model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape,', 'Utilize a state-of-the-art deep learning model that integrates transfer learning and attention mechanisms to classify the image of a <CLASS> based on its visual features, such as color, shape', 'Utilize a pre-trained ResNet50 model fine-tuned with transfer learning to classify the image of a <CLASS> based on its visual features, achieving a score of 95.', 'Utilize a pre-trained deep learning model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape, and', 'Utilize a transfer learning approach with a pre-trained convolutional neural network, fine-tuned on the large scale visual recognition dataset, to classify the image of a <CLASS> based on']
+
+computing the score of "Utilize a pre-trained deep learning model, fine-tuned on the large scale visual recognition dataset, to classify the image of a <CLASS> based on its visual features, leveraging techniques" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a pre-trained deep learning model, fine-tuned on the large scale visual recognition dataset, to classify the image of a <CLASS> based on its visual features, leveraging techniques, score: 100.0,loss: 0.52099609375
+computing the score of "Utilize a pre-trained ResNet50 model with transfer learning and fine-tune it on the large scale visual recognition dataset to classify images of a <CLASS> based on visual features," by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a pre-trained ResNet50 model with transfer learning and fine-tune it on the large scale visual recognition dataset to classify images of a <CLASS> based on visual features,, score: 25.0,loss: 2.732421875
+computing the score of "Utilize a pre-trained ResNet50 model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape," by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a pre-trained ResNet50 model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape,, score: 50.0,loss: 1.306640625
+computing the score of "Utilize a state-of-the-art deep learning model that integrates transfer learning and attention mechanisms to classify the image of a <CLASS> based on its visual features, such as color, shape" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a state-of-the-art deep learning model that integrates transfer learning and attention mechanisms to classify the image of a <CLASS> based on its visual features, such as color, shape, score: 50.0,loss: 2.771484375
+computing the score of "Utilize a pre-trained ResNet50 model fine-tuned with transfer learning to classify the image of a <CLASS> based on its visual features, achieving a score of 95." by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a pre-trained ResNet50 model fine-tuned with transfer learning to classify the image of a <CLASS> based on its visual features, achieving a score of 95., score: 75.0,loss: 3.369140625
+computing the score of "Utilize a pre-trained deep learning model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape, and" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a pre-trained deep learning model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape, and, score: 75.0,loss: 0.85009765625
+computing the score of "Utilize a transfer learning approach with a pre-trained convolutional neural network, fine-tuned on the large scale visual recognition dataset, to classify the image of a <CLASS> based on" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 1, instruction: Utilize a transfer learning approach with a pre-trained convolutional neural network, fine-tuned on the large scale visual recognition dataset, to classify the image of a <CLASS> based on, score: 25.0,loss: 3.51171875
+
+================== Step 2 =====================
+
+meta_prompt: 
+
+You need to perform image classification on the large scale visual recognition dataset based on visual features.
+Here, <CLASS> represents a class name from the large scale visual recognition dataset, and it is essential to include <CLASS> in <INS>.
+Below are some previous instructions with their scores and loss. The score ranges from 0 to 100. The loss ranges from 0 to positive infinity.
+
+Here is a description of some features of the flowers in the image:
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+This is a photo of a flower.
+
+text:
+Utilize a transfer learning approach with a pre-trained convolutional neural network, fine-tuned on the large scale visual recognition dataset, to classify the image of a <CLASS> based on
+score:
+25.0
+loss:
+3.51171875
+
+text:
+Classify the image of a <CLASS> based on its visual features, such as color, shape, and texture, to achieve a score of 90.0 and a loss of
+score:
+25.0
+loss:
+2.94140625
+
+text:
+Utilize a pre-trained ResNet50 model with transfer learning and fine-tune it on the large scale visual recognition dataset to classify images of a <CLASS> based on visual features,
+score:
+25.0
+loss:
+2.732421875
+
+text:
+a photo of a <CLASS>.
+score:
+50.0
+loss:
+4.0234375
+
+text:
+Utilize a state-of-the-art deep learning model that integrates transfer learning and attention mechanisms to classify the image of a <CLASS> based on its visual features, such as color, shape
+score:
+50.0
+loss:
+2.771484375
+
+text:
+Classify the image of a <CLASS> with a deep learning model that utilizes convolutional neural networks to extract visual features, achieving a score of 90.0 and a loss of
+score:
+50.0
+loss:
+1.697265625
+
+text:
+Utilize a pre-trained ResNet50 model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape,
+score:
+50.0
+loss:
+1.306640625
+
+text:
+Utilize a pre-trained ResNet50 model fine-tuned with transfer learning to classify the image of a <CLASS> based on its visual features, achieving a score of 95.
+score:
+75.0
+loss:
+3.369140625
+
+text:
+Utilize a pre-trained deep learning model with transfer learning and fine-tuning to classify the image of a <CLASS> based on its visual features, such as color, shape, and
+score:
+75.0
+loss:
+0.85009765625
+
+text:
+Utilize a pre-trained deep learning model, fine-tuned on the large scale visual recognition dataset, to classify the image of a <CLASS> based on its visual features, leveraging techniques
+score:
+100.0
+loss:
+0.52099609375
+
+
+Generate an instruction that differs from all the instructions <INS>　above, with a higher score and a lower loss. The instruction should begin with <INS> and end with </INS>. The instruction should be concise, effective, and generally applicable to all problems above.
+
+
+
+initially generated instructions: ['Utilize an ensemble of state-of-the-art pre-trained models, including ResNet50 and other architectures, with advanced transfer learning techniques and fine-tuning on the large scale visual recognition dataset', 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, fine-tuned on the large scale visual recognition dataset, and', 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning techniques and attention mechanisms, to classify the', 'Utilize an ensemble of state-of-the-art pre-trained models, including ResNet50 and Vision Transformers, with advanced transfer learning techniques and attention mechanisms, to classify the image of a <', 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, to classify the image', 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, fine-tuned on', 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, to classify the image', 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, to classify the image']
+
+already evaluated 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, to classify the image' previously
+already evaluated 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, to classify the image' previously
+
+to-evaluate generated instructions: ['Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, fine-tuned on the large scale visual recognition dataset, and', 'Utilize an ensemble of state-of-the-art pre-trained models, including ResNet50 and Vision Transformers, with advanced transfer learning techniques and attention mechanisms, to classify the image of a <', 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, to classify the image', 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, fine-tuned on', 'Utilize an ensemble of state-of-the-art pre-trained models, including ResNet50 and other architectures, with advanced transfer learning techniques and fine-tuning on the large scale visual recognition dataset', 'Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning techniques and attention mechanisms, to classify the']
+
+computing the score of "Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, fine-tuned on the large scale visual recognition dataset, and" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, fine-tuned on the large scale visual recognition dataset, and, score: 0.0,loss: 4.625
+computing the score of "Utilize an ensemble of state-of-the-art pre-trained models, including ResNet50 and Vision Transformers, with advanced transfer learning techniques and attention mechanisms, to classify the image of a <" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of state-of-the-art pre-trained models, including ResNet50 and Vision Transformers, with advanced transfer learning techniques and attention mechanisms, to classify the image of a <, score: 0.0,loss: 4.625
+computing the score of "Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, to classify the image" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, to classify the image, score: 0.0,loss: 4.625
+computing the score of "Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, fine-tuned on" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning and attention mechanisms, fine-tuned on, score: 0.0,loss: 4.625
+computing the score of "Utilize an ensemble of state-of-the-art pre-trained models, including ResNet50 and other architectures, with advanced transfer learning techniques and fine-tuning on the large scale visual recognition dataset" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of state-of-the-art pre-trained models, including ResNet50 and other architectures, with advanced transfer learning techniques and fine-tuning on the large scale visual recognition dataset, score: 0.0,loss: 4.625
+computing the score of "Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning techniques and attention mechanisms, to classify the" by prompting
+Loading trainer: CoOp
+Loading dataset: OxfordFlowers
+a photo of a
+Step 2, instruction: Utilize an ensemble of state-of-the-art deep learning models, including pre-trained ResNet50 and convolutional neural networks, with advanced transfer learning techniques and attention mechanisms, to classify the, score: 0.0,loss: 4.625
