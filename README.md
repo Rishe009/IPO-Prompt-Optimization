@@ -21,3 +21,18 @@ python generate_descriptions.py
 
 ## Acknowledgements
 We gratefully acknowledge that the IPO code is based on the excellent repositories [CoOp](https://github.com/KaiyangZhou/CoOp/tree/main) and [OPRO](https://github.com/google-deepmind/opro). Many thanks to their contributors for their inspiring work!
+
+# IPO: Interpretable Prompt Optimization for Vision-Language Models
+
+Implementation of NeurIPS 2024 paper on Oxford 102 Flowers dataset.
+
+## Models Used
+- CLIP ViT-B/16 (Vision-Language Model)
+- NVIDIA Llama 3.3-70b (LLM Optimizer via NVIDIA NIM API)
+
+## Results
+- Initial prompt score: 50%
+- Optimized prompt score: 100% (Step 0)
+
+## Dataset
+Oxford 102 Flowers (8,189 images, 102 classes)
